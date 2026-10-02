@@ -49,8 +49,53 @@ async function init() {
         position: { lat: 43.485, lng: -90 },
         title: "Customized Pin Colors",
     });
-    marker2.append(customizedPin3); // Add your pin modifications
+    marker3.append(customizedPin3); // Add your pin modifications
     mapElement.append(marker3);
+    
+    // 1. Customize the background, border, and inner glyph
+    const customizedPin4 = new PinElement({
+        background: "#d01c8b",
+        borderColor: "white",
+        glyphColor: "white",
+        scale: 1.2, // Scales the pin size up by 20%
+    });
+
+    const marker4 = new AdvancedMarkerElement({
+        position: { lat: 43.485, lng: -90.05 },
+        title: "Customized Pin Colors",
+    });
+    marker4.append(customizedPin4); // Add your pin modifications
+    mapElement.append(marker4);
+    
+    // 1. Customize the background, border, and inner glyph
+    const customizedPin5 = new PinElement({
+        background: "#f1b6da",
+        borderColor: "black",
+        glyphColor: "black",
+        scale: 1.0, // Scales the pin size up by 20%
+    });
+
+    const marker5 = new AdvancedMarkerElement({
+        position: { lat: 43.49, lng: -90.05 },
+        title: "Customized Pin Colors",
+    });
+    marker5.append(customizedPin5); // Add your pin modifications
+    mapElement.append(marker5);
+    
+    // 1. Customize the background, border, and inner glyph
+    const customizedPin6 = new PinElement({
+        background: "#b8e186",
+        borderColor: "white",
+        glyphColor: "white",
+        scale: 1.2, // Scales the pin size up by 20%
+    });
+
+    const marker6 = new AdvancedMarkerElement({
+        position: { lat: 43.495, lng: -90.05 },
+        title: "Customized Pin Colors",
+    });
+    marker6.append(customizedPin6); // Add your pin modifications
+    mapElement.append(marker6);
     
     
     
