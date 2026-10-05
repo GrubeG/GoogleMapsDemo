@@ -1,11 +1,12 @@
-const mapElement = document.querySelector('gmp-map');
-
 async function init() {
     // Request needed libraries.
     const [{ AdvancedMarkerElement, PinElement }] = await Promise.all([
         google.maps.importLibrary('marker'),
         google.maps.importLibrary('maps'),
     ]);
+    
+    const mapElement = document.querySelector('gmp-map');
+    const innerMap = mapElement.innerMap;
     
     // 1. Customize the background, border, and inner glyph
     const customizedPin = new PinElement({
@@ -141,6 +142,56 @@ async function init() {
     });
     marker9.append(customizedPin9); // Add your pin modifications
     mapElement.append(marker9);
+    
+    const triangleCoords = [
+        { lat: 43.49, lng: -90.10 },
+        { lat: 43.51, lng: -90.15 },
+        { lat: 43.53, lng: -90.05 },
+        ];
+
+    const customPolygon = new google.maps.Polygon({
+      paths: triangleCoords,
+      strokeColor: "#646EF1",
+      strokeOpacity: 0.8,
+      strokeWeight: 3,
+      fillColor: "#646EF1",
+      fillOpacity: 0.25,
+      map: innerMap
+    });
+    
+    const rectangleCoords = [
+        { lat: 43.52, lng: -89.95 },
+        { lat: 43.52, lng: -89.96 },
+        { lat: 43.52, lng: -90.01 },
+        { lat: 43.48, lng: -90 },
+        ];
+
+    const customPolygon2 = new google.maps.Polygon({
+      paths: rectangleCoords,
+      strokeColor: "#F71830",
+      strokeOpacity: 0.6,
+      strokeWeight: 3,
+      fillColor: "red",
+      fillOpacity: 0.25,
+      map: innerMap
+    });
+    
+    const rectangle2Coords = [
+        { lat: 43.52, lng: -89.90 },
+        { lat: 43.52, lng: -89.89 },
+        { lat: 43.52, lng: -89.88 },
+        { lat: 43.48, lng: -89.80 },
+        ];
+
+    const customPolygon3 = new google.maps.Polygon({
+      paths: rectangle2Coords,
+      strokeColor: "#E66900",
+      strokeOpacity: 0.6,
+      strokeWeight: 3,
+      fillColor: "yellow",
+      fillOpacity: 0.25,
+      map: innerMap
+    });
     
     
     
