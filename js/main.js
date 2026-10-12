@@ -108,7 +108,7 @@ async function init() {
 
     const marker7 = new AdvancedMarkerElement({
         position: { lat: 43.495, lng: -90.10 },
-        title: "Customized Pin Colors",
+        title: "Valid Pin",
     });
     marker7.append(customizedPin7); // Add your pin modifications
     mapElement.append(marker7);
@@ -123,7 +123,7 @@ async function init() {
 
     const marker8 = new AdvancedMarkerElement({
         position: { lat: 43.490, lng: -90.10 },
-        title: "Customized Pin Colors",
+        title: "Warning Pin",
     });
     marker8.append(customizedPin8); // Add your pin modifications
     mapElement.append(marker8);
@@ -138,10 +138,29 @@ async function init() {
 
     const marker9 = new AdvancedMarkerElement({
         position: { lat: 43.485, lng: -90.10 },
-        title: "Customized Pin Colors",
+        title: "Invalid Pin",
     });
     marker9.append(customizedPin9); // Add your pin modifications
     mapElement.append(marker9);
+    
+   // Create a custom square DOM element
+  const squarePin = document.createElement('div');
+  squarePin.className = 'square-marker';
+  squarePin.textContent = 'Fix';
+
+  // Attach the square element to the AdvancedMarkerElement
+  const SquareMarker = new AdvancedMarkerElement({
+    position: { lat: 43.485, lng: -90.15 },
+    content: squarePin, // Pass custom DOM element here or append it
+  });
+    
+mapElement.append(SquareMarker)
+    
+    
+    
+    
+    
+    
     
     const triangleCoords = [
         { lat: 43.49, lng: -90.10 },

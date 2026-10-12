@@ -16,3 +16,29 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.square-marker {
+  width: 32px;
+  height: 32px;
+  background-color: #F71839;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  border: 2px solid #FFFFFF;
+  border-radius: 4px; /* Use 0px for a sharp square, or a small radius for rounded square */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    
+  /* Optional: Pivot layout positioning to anchor the bottom edge to the map coordinate */
+  transform: translate(-50%, -100%);
+}
+}
+
+/* Optional hover state animation */
+.square-marker:hover {
+  background-color: #F71839;
+  transform: translate(-50%, -105%) scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
