@@ -220,7 +220,7 @@ mapElement.append(SquareMarker)
       strokeOpacity: 0.5,
       strokeWeight: 3,
       fillColor: "red",
-      fillOpacity: 0.15,
+      fillOpacity: 0.10,
       map: innerMap
     });
     
@@ -237,7 +237,7 @@ mapElement.append(SquareMarker)
       strokeOpacity: 0.2,
       strokeWeight: 2,
       fillColor: "red",
-      fillOpacity: 0.25,
+      fillOpacity: 0.20,
       map: innerMap
     });
     
@@ -254,7 +254,7 @@ mapElement.append(SquareMarker)
       strokeOpacity: 0.5,
       strokeWeight: 1,
       fillColor: "red",
-      fillOpacity: 0.25,
+      fillOpacity: 0.20,
       map: innerMap
     });
     
@@ -271,7 +271,7 @@ mapElement.append(SquareMarker)
       strokeOpacity: 0.5,
       strokeWeight: 1,
       fillColor: "red",
-      fillOpacity: 0.25,
+      fillOpacity: 0.20,
       map: innerMap
     });
     
