@@ -8,11 +8,36 @@ async function init() {
     const mapElement = document.querySelector('gmp-map');
     const innerMap = mapElement.innerMap;
     
+    // 2. Create an HTML element for the star glyph (Using an SVG)
+    const starIcon = document.createElement("div");
+    starIcon.innerHTML = `
+        <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="20px" height="20px" fill="black">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+    `;
+    
+    // 1. Create a square HTML element to act as your inner icon
+  const squareIcon = document.createElement("div");
+  squareIcon.style.width = "14px";
+  squareIcon.style.height = "14px";
+  squareIcon.style.backgroundColor = "black"; // Icon color
+  squareIcon.style.borderRadius = "2px";     // Optional: slightly rounded corners
+    
+    const crossIcon = document.createElement("div");
+  crossIcon.innerHTML = `
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round">
+      <!-- "X" Cross Path -->
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  `;
+    
     // 1. Customize the background, border, and inner glyph
     const customizedPin = new PinElement({
-        background: "#f4a582",
-        borderColor: "white",
-        glyphColor: "white",
+        background: "#3FDCE0",
+        borderColor: "black",
+        glyph: starIcon,
+        glyphColor: "black",
         scale: 1.2, // Scales the pin size up by 20%
     });
 
@@ -25,9 +50,10 @@ async function init() {
    
      // 1. Customize the background, border, and inner glyph
     const customizedPin2 = new PinElement({
-        background: "#0571b0",
+        background: "#FFBF00",
         borderColor: "black",
-        glyphColor: "white",
+        glyph: squareIcon,
+        glyphColor: "black",
         scale: 1.2, // Scales the pin size up by 20%
     });
 
@@ -40,9 +66,10 @@ async function init() {
     
     // 1. Customize the background, border, and inner glyph
     const customizedPin3 = new PinElement({
-        background: "#ca0020",
-        borderColor: "white",
-        glyphColor: "white",
+        background: "#F71839",
+        borderColor: "black",
+        glyph: crossIcon,
+        glyphColor: "black",
         scale: 1.2, // Scales the pin size up by 20%
     });
 
@@ -98,19 +125,12 @@ async function init() {
     marker6.append(customizedPin6); // Add your pin modifications
     mapElement.append(marker6);
     
-    // 2. Create an HTML element for the star glyph (Using an SVG)
-    const starIcon = document.createElement("div");
-    starIcon.innerHTML = `
-        <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="20px" height="20px" fill="black">
-            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-    `;
     
     // 1. Customize the background, border, and inner glyph
     const customizedPin7 = new PinElement({
         background: "#3FDCE0",
         borderColor: "black",
-        glyph: starIcon,
+        //glyph: starIcon,
         glyphColor: "black",
         scale: 1.2, // Scales the pin size up by 20%
     });
@@ -180,7 +200,7 @@ mapElement.append(SquareMarker)
     const customPolygon = new google.maps.Polygon({
       paths: triangleCoords,
       strokeColor: "#646EF1",
-      strokeOpacity: 0.8,
+      strokeOpacity: 0.5,
       strokeWeight: 3,
       fillColor: "#646EF1",
       fillOpacity: 0.25,
@@ -189,34 +209,68 @@ mapElement.append(SquareMarker)
     
     const rectangleCoords = [
         { lat: 43.52, lng: -89.95 },
-        { lat: 43.52, lng: -89.96 },
-        { lat: 43.52, lng: -90.01 },
+        { lat: 43.53, lng: -89.96 },
+        { lat: 43.54, lng: -90.01 },
         { lat: 43.48, lng: -90 },
         ];
 
     const customPolygon2 = new google.maps.Polygon({
       paths: rectangleCoords,
       strokeColor: "#F71830",
-      strokeOpacity: 0.6,
+      strokeOpacity: 0.5,
       strokeWeight: 3,
+      fillColor: "red",
+      fillOpacity: 0.15,
+      map: innerMap
+    });
+    
+    const rectangle2Coords = [
+        { lat: 43.53, lng: -89.96 },
+        { lat: 43.52, lng: -89.95 },
+        { lat: 43.48, lng: -90. },
+        { lat: 43.52, lng: -89.92 },
+        ];
+
+    const customPolygon3 = new google.maps.Polygon({
+      paths: rectangle2Coords,
+      strokeColor: "red",
+      strokeOpacity: 0.2,
+      strokeWeight: 2,
       fillColor: "red",
       fillOpacity: 0.25,
       map: innerMap
     });
     
-    const rectangle2Coords = [
-        { lat: 43.52, lng: -89.90 },
-        { lat: 43.52, lng: -89.89 },
-        { lat: 43.52, lng: -89.88 },
-        { lat: 43.48, lng: -89.80 },
+    const rectangle3Coords = [
+        { lat: 43.53, lng: -90.04 },
+        { lat: 43.53, lng: -90.03 },
+        { lat: 43.48, lng: -90 },
+        { lat: 43.54, lng: -90.01 },
         ];
 
-    const customPolygon3 = new google.maps.Polygon({
-      paths: rectangle2Coords,
-      strokeColor: "#E66900",
-      strokeOpacity: 0.6,
-      strokeWeight: 3,
-      fillColor: "yellow",
+    const customPolygon4 = new google.maps.Polygon({
+      paths: rectangle3Coords,
+      strokeColor: "red",
+      strokeOpacity: 0.5,
+      strokeWeight: 1,
+      fillColor: "red",
+      fillOpacity: 0.25,
+      map: innerMap
+    });
+    
+    const rectangle4Coords = [
+        { lat: 43.55, lng: -89.99 },
+        { lat: 43.55, lng: -89.95 },
+        { lat: 43.53, lng: -89.96 },
+        { lat: 43.54, lng: -90.01 },
+        ];
+
+    const customPolygon5 = new google.maps.Polygon({
+      paths: rectangle4Coords,
+      strokeColor: "red",
+      strokeOpacity: 0.5,
+      strokeWeight: 1,
+      fillColor: "red",
       fillOpacity: 0.25,
       map: innerMap
     });
