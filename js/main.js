@@ -25,7 +25,7 @@ async function init() {
     
     const crossIcon = document.createElement("div");
   crossIcon.innerHTML = `
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round">
       <!-- "X" Cross Path -->
       <line x1="18" y1="6" x2="6" y2="18"></line>
       <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -199,10 +199,10 @@ mapElement.append(SquareMarker)
 
     const customPolygon = new google.maps.Polygon({
       paths: triangleCoords,
-      strokeColor: "#646EF1",
-      strokeOpacity: 0.5,
+      strokeColor: "blue",
+      strokeOpacity: 0.9,
       strokeWeight: 3,
-      fillColor: "#646EF1",
+      fillColor: "blue",
       fillOpacity: 0.25,
       map: innerMap
     });
@@ -220,7 +220,7 @@ mapElement.append(SquareMarker)
       strokeOpacity: 0.5,
       strokeWeight: 3,
       fillColor: "red",
-      fillOpacity: 0.10,
+      fillOpacity: 0.30,
       map: innerMap
     });
     
@@ -237,7 +237,7 @@ mapElement.append(SquareMarker)
       strokeOpacity: 0.2,
       strokeWeight: 2,
       fillColor: "red",
-      fillOpacity: 0.20,
+      fillOpacity: 0.10,
       map: innerMap
     });
     
@@ -254,7 +254,7 @@ mapElement.append(SquareMarker)
       strokeOpacity: 0.5,
       strokeWeight: 1,
       fillColor: "red",
-      fillOpacity: 0.20,
+      fillOpacity: 0.10,
       map: innerMap
     });
     
@@ -271,7 +271,7 @@ mapElement.append(SquareMarker)
       strokeOpacity: 0.5,
       strokeWeight: 1,
       fillColor: "red",
-      fillOpacity: 0.20,
+      fillOpacity: 0.10,
       map: innerMap
     });
     
